@@ -45,8 +45,8 @@
                         {{$post->body}}
                     </td>
                     <td class="px-6 py-4">
-                        <button>Edite</button>
-                        <button>Delete</button>
+                        <a href="{{route('edit-post',$post->id)}}">Edit</a>
+                        <a href="{{route('delete-post',$post->id)}}">Delete</a>
                     </td>
                 </tr>
                 @endforeach

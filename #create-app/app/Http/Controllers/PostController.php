@@ -26,7 +26,32 @@ class PostController extends Controller
             'title' => $data->title,
             'body' => $data->body,
         ]);
-        return response('Succes');
+        return redirect()->route('index-post');
+    }
+
+    function edit($id)
+    {
+        $post = DB::table('posts')->where('id',$id)->first();
+        return view('post.edit', compact('post'));
+        // return $post;
+    }
+
+    function update(Request $data,$id){
+        DB::table('posts')->where('id',$id)->update([
+            'title' => $data->title,
+            'body' => $data->body
+        ]);
+        // return $id;
+        // return redirect('index-post');
+        // return response('Added Post Success');
+        // return redirect('post');
+        return redirect()->route('index-post');
+    }
+
+    function distroy($id){
+        DB::table('posts')->where('id',$id)->delete();
+        // return $id;
+        return redirect()->route('index-post');
     }
 
 

@@ -19,6 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('post/create', [PostController::class, 'create']);
-Route::get('post', [PostController::class, 'index']);
+Route::get('post', [PostController::class, 'index'])->name('index-post');
 Route::post('post/insert', [PostController::class, 'store'])->name('smiya');
+Route::get('post/edit/{id}', [PostController::class, 'edit'])->name('edit-post');
+Route::put('post/update/{id}', [PostController::class, 'update'])->name('update-post');
+Route::get('post/delete/{id}', [PostController::class, 'distroy'])->name('delete-post');
 

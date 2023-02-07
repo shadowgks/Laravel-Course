@@ -1,1 +1,1 @@
-@method('delete');
+<!-- @method('delete'); -->

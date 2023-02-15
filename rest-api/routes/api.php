@@ -19,4 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/country', [CountryController::class, 'country']);
+Route::get('/country', [CountryController::class, 'index']);
+Route::get('/country/{id}', [CountryController::class,'edit']);
+Route::post('/country/create', [CountryController::class,'store']);
+Route::put('/country/{country}', [CountryController::class,'update']);
+Route::delete('/country/{country}', [CountryController::class,'distroy']);

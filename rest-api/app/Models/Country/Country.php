@@ -9,7 +9,7 @@ class Country extends Model
 {
     use HasFactory;
     protected $table = '_z_country';
-    public $timestamps = false;
+    public $timestamps = false; //update time and delete time stop
     // protected $id = 'id';
     protected $fillable = [
         'iso',
